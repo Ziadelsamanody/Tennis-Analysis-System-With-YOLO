@@ -1,8 +1,21 @@
 
 
+
 input_videos/input_video.mp4
+
 
 
 output_video.avi
 
+
 runs/
+
+yolov8x.pt
+
+models/
+
+models/yolovlast.pt
+
+
+
+training/tennis-ball-detection-6/
