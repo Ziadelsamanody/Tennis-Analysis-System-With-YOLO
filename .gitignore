@@ -1,24 +1,47 @@
 
 
+# Input videos
+input_videos/
+*.mp4
+*.avi
+*.mov
+*.mkv
 
-input_videos/input_video.mp4
-
-
-
+# Output videos
 output_video.avi
+*.avi
 
-
-runs/
-
-yolov8x.pt
-
+# Model files
+*.pt
+*.pth
+*.weights
+*.onnx
 models/
 
-models/yolovlast.pt
+# Training runs and outputs
+runs/
+training/runs/
 
-
-
+# Dataset files
 training/tennis-ball-detection-6/
+*.yaml
+data.yaml
 
+# Large data files
+*.zip
+*.tar
+*.gz
 
-D:\Projects\testing analysis\training\tennis-ball-detection-6
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Environment files
+.env
+.venv
+env/
+venv/
