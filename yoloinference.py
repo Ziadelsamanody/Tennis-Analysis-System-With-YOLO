@@ -8,3 +8,6 @@ result = model.track('input_videos/input_video.mp4', conf=0.2, save=True)
 
 
 
+for box in result[0].boxes:
+    print(box)
+    

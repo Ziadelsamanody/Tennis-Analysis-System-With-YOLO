@@ -1,14 +1,22 @@
 from ultralytics import YOLO
 import cv2 as cv 
+import pickle 
 
 class PlayerTracker:
     def __init__(self, model_path):
         self.model = YOLO(model_path)
-    def detect_frames(self, frames):
+    def detect_frames(self, frames, read_from_stub=False,  stub_path = None):
         player_detection = []
+        if  read_from_stub  and stub_path is not None : 
+            with open(stub_path, "rb") as  f :
+                player_detection = pickle.load(f)
+                
         for frame in frames : 
             player_dict = self.detect_frame(frame)
             player_detection.append(player_dict)
+        if stub_path is not None :
+            with open(stub_path, "wb") as f :
+                pickle.dump(player_detection, f)
 
         return player_detection
     def detect_frame(self, frame):
@@ -16,8 +24,10 @@ class PlayerTracker:
         id_names_dict = result.names
 
         player_dict = {}
-
-        for box in result.boxes:
+    #result.boxes :   
+    #cls: tensor([0.]) conf: tensor([0.9049])id: tensor([1.]) ...
+#
+        for box in result.boxes:  #   
             track_id = int(box.id.item())
             result = box.xyxy[0].tolist()
             object_cls_id= box.cls.tolist()[0]
@@ -41,3 +51,4 @@ class PlayerTracker:
 
 
 
+#player dict = {track_id : [x1,y1,x2,y2]}

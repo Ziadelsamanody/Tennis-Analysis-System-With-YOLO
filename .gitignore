@@ -45,3 +45,9 @@ __pycache__/
 .venv
 env/
 venv/
+
+output_videos/
+*.mp4
+*.avi
+*.mov
+*.mkv
