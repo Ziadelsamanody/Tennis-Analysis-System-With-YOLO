@@ -10,7 +10,8 @@ class PlayerTracker:
         if  read_from_stub  and stub_path is not None : 
             with open(stub_path, "rb") as  f :
                 player_detection = pickle.load(f)
-                
+            return player_detection
+
         for frame in frames : 
             player_dict = self.detect_frame(frame)
             player_detection.append(player_dict)
@@ -51,4 +52,5 @@ class PlayerTracker:
 
 
 
-#player dict = {track_id : [x1,y1,x2,y2]}
+# #player dict = {track_id : [x1,y1,x2,y2]}
+

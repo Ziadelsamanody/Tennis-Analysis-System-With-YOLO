@@ -8,8 +8,8 @@ def main():
     
     #detect players 
     player_tracker = PlayerTracker('yolov8x.pt')
-    player_detection = player_tracker.detect_frames(video_frames, read_from_stub=False, stub_path='tracker_stubs/player_detection.pkl')
-    
+    player_detection = player_tracker.detect_frames(video_frames, read_from_stub=True, stub_path='tracker_stubs/player_detection.pkl')
+  
     
     #draw output 
     #draw player Bounding boxes
