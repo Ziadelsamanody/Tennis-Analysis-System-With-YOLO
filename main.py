@@ -13,7 +13,7 @@ def main():
     
     # detect ball 
     ball_tracker = BallTracker('models/yolov5last.pt')
-    ball_detection = ball_tracker.detect_frames(video_frames, read_from_stub=False, stub_path='tracker_stubs/ball_detection.pkl')
+    ball_detection = ball_tracker.detect_frames(video_frames, read_from_stub=True, stub_path='tracker_stubs/ball_detection.pkl')
 
     #draw output 
     #draw player and ball  Bounding boxes
