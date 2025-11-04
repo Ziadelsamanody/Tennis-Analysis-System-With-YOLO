@@ -1,6 +1,8 @@
 from utils import (read_video, save_video) 
 from trackers import PlayerTracker, BallTracker
 from court_line_detector import CourtLineDetector
+import warnings
+warnings.filterwarnings("ignore")
 def main():
     # read video
     input_video_path = 'input_videos/input_video.mp4'
