@@ -1,8 +1,9 @@
 from utils import (read_video, save_video) 
 from trackers import PlayerTracker, BallTracker
 from court_line_detector import CourtLineDetector
-import warnings
-warnings.filterwarnings("ignore")
+import cv2 as cv 
+
+
 def main():
     # read video
     input_video_path = 'input_videos/input_video.mp4'
@@ -23,6 +24,9 @@ def main():
     court_line_detector = CourtLineDetector(court_model_path)
     court_keypoints = court_line_detector.predict(video_frames[0]) # only video frames
 
+    #choeose_players close to court
+    player_detection = player_tracker.choose_and_filter_player(court_keypoints, player_detection)
+
     #draw output 
     #draw player and ball  Bounding boxes
     output_video_frames = player_tracker.draw_boxes(video_frames, player_detection)
@@ -31,6 +35,10 @@ def main():
     # Draw court keypoints 
     output_video_frames =  court_line_detector.draw_keypoints_on_video(video_frames, court_keypoints)
 
+    # Draw Frames on top left corner
+    for i , frame in enumerate(output_video_frames):
+        cv.putText(frame, f"Frame {i}", (10, 30), cv.FONT_HERSHEY_SIMPLEX, 1, (255,255,255), 2)
+    
     save_video(output_video_frames, 'output_videos/output_video.avi')
 
 
