@@ -85,4 +85,3 @@ class PlayerTracker:
 
 
 # #player dict = {track_id : [x1,y1,x2,y2]}
-
