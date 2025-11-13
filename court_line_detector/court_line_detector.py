@@ -10,7 +10,7 @@ import torch.nn as  nn
 
 class CourtLineDetector:
     def __init__(self, model_path):
-        self.model = models.resnet50(pretrained=False)
+        self.model = models.resnet50(weights= None)
         self.model.fc = nn.Linear(self.model.fc.in_features, 14 * 2) #14keypoints with two x, y
         self.model.load_state_dict(torch.load(model_path, map_location='cuda'))
 
