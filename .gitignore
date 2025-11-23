@@ -2,14 +2,15 @@
 
 # Input videos
 input_videos/
-*.mp4
-*.avi
-*.mov
-*.mkv
+input_videos/*.mp4
+input_videos/*.avi
+input_videos/*.mov
+input_videos/*.mkv
 
-# Output videos
+# Output videos (exclude from tracking)
 output_video.avi
-*.avi
+output_videos/*.avi
+output_videos/*.mp4
 
 # Model files
 *.pt
@@ -46,8 +47,10 @@ __pycache__/
 env/
 venv/
 
-output_videos/
-*.mp4
+# ALLOW assets folder and its contents for showcasing
+# The assets folder contains demo videos and screenshots for README
+!assest/
+!assest/**
 *.avi
 *.mov
 *.mkv
