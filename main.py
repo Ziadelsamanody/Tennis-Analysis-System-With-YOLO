@@ -129,7 +129,7 @@ def main():
     for i , frame in enumerate(output_video_frames):
         cv.putText(frame, f"Frame {i}", (10, 30), cv.FONT_HERSHEY_SIMPLEX, 1, (255,255,255), 2)
     
-    save_video(output_video_frames, 'output_videos/output_video.avi')
+    save_video(output_video_frames, 'assest/output_video.mp4')
 
 
 if __name__ == '__main__':
