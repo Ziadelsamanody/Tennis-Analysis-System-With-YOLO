@@ -3,7 +3,7 @@ import cv2 as cv
 import pickle 
 import sys 
 sys.path.append('../')
-from utils import mesuare_distance, get_center_of_bbox
+from utils import measure_distance, get_center_of_bbox
 
 class PlayerTracker:
     def __init__(self, model_path):
@@ -27,7 +27,7 @@ class PlayerTracker:
             min_distance = float('inf')
             for i in range(0, len(court_keypoints), 2): 
                 court_keypoint = (court_keypoints[i], court_keypoints[i+1])
-                distance = mesuare_distance(player_center, court_keypoint)
+                distance = measure_distance(player_center, court_keypoint)
                 if distance < min_distance:
                     min_distance = distance 
             distances.append((track_id , min_distance))
