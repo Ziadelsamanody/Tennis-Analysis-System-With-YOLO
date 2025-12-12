@@ -77,9 +77,11 @@ tennis-analysis-system/
 ## Sample Output
 ---
 
-https://github.com/user-attachments/assets/caa715b6-a670-49ac-ad7e-e7b17c222069
 
--913e-10e030267e55
+
+https://github.com/user-attachments/assets/77df2f69-1665-41b3-8a6e-4cf1cb76170c
+
+
 
 **🔥 Features Demonstrated in the Video:**
 
@@ -332,4 +334,5 @@ Project Link: [https://github.com/Ziadelsamanody/Tennis-Analysis-System-With-YOL
 Made with ❤️ for the tennis community
 
 </div>
+
 
